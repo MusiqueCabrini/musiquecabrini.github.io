@@ -1,37 +1,37 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Unis par nos Valeurs</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="app-container">
+    <!-- Couverture -->
+    <img src="cropped-logo_cabrini_couleur.png" alt="Couverture" class="cover"/>
 
-  <!-- Image de couverture -->
-  <img src="cropped-logo_cabrini_couleur.png" alt="Couverture" class="cover">
+    <!-- Infos musique -->
+    <h2>UNIS PAR NOS VALEURS</h2>
+    <p class="artist">Élèves de Cabrini</p>
 
-  <!-- Titre et artiste -->
-  <h2>UNIS PAR NOS VALEURS</h2>
-  <p class="artist">Élèves de Cabrini</p>
+    <!-- Boutons de contrôle -->
+    <div class="control-icons">
+      <button class="icon-btn">⏮️</button>
+      <button id="playPause" class="icon-btn play-main">►</button>
+      <button class="icon-btn">⏭️</button>
+    </div>
 
-  <!-- Bouton play/pause -->
-  <div class="controls">
-    <button id="playPause" class="play-button">►</button>
+    <!-- Barre de progression -->
+    <input type="range" id="progressBar" value="0" max="100" />
+
+    <!-- Bouton like -->
+    <div class="like-container">
+      <span id="heart" class="heart">🤍</span>
+    </div>
   </div>
 
-  <!-- Audio -->
-  <audio id="audio">
-    <source src="ma-musique.mp3" type="audio/mpeg">
-    Votre navigateur ne supporte pas l'audio.
-  </audio>
-
-  <!-- ❤️ Cœur "like" au-dessus du menu -->
-  <div class="like-container">
-    <span id="heart" class="heart">🤍</span>
-  </div>
-
-  <!-- ✅ Menu de navigation -->
+  <!-- Navigation -->
   <div class="footer">
     <nav>
       <a href="index.html">
@@ -49,10 +49,19 @@
     </nav>
   </div>
 
+  <!-- Audio -->
+  <audio id="audio">
+    <source src="ma-musique.mp3" type="audio/mpeg" />
+    Votre navigateur ne supporte pas l'audio.
+  </audio>
+
   <!-- Script JS -->
   <script>
     const audio = document.getElementById('audio');
     const playPauseBtn = document.getElementById('playPause');
+    const progressBar = document.getElementById('progressBar');
+    const heart = document.getElementById('heart');
+    let liked = false;
 
     playPauseBtn.addEventListener('click', () => {
       if (audio.paused) {
@@ -64,14 +73,21 @@
       }
     });
 
-    const heart = document.getElementById('heart');
-    let liked = false;
+    audio.addEventListener('timeupdate', () => {
+      if (audio.duration) {
+        const progress = (audio.currentTime / audio.duration) * 100;
+        progressBar.value = progress;
+      }
+    });
+
+    progressBar.addEventListener('input', () => {
+      audio.currentTime = (progressBar.value / 100) * audio.duration;
+    });
 
     heart.addEventListener('click', () => {
       liked = !liked;
       heart.textContent = liked ? '❤️' : '🤍';
     });
   </script>
-
 </body>
 </html>
