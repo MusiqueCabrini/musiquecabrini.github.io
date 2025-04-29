@@ -80,3 +80,24 @@ audio {
   text-decoration: none;
   font-size: 14px;
 }
+
+.like-container {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.heart {
+  font-size: 32px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.heart:hover {
+  transform: scale(1.2);
+}
+
+.nav-icon {
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+
