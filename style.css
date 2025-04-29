@@ -12,10 +12,7 @@ body {
   padding: 20px;
   min-height: 100vh;
   box-sizing: border-box;
-}
-
-.album-section {
-  text-align: center;
+  padding-bottom: 100px; /* espace pour le footer */
 }
 
 .cover {
@@ -27,58 +24,32 @@ body {
 
 .artist {
   color: #aaa;
+  margin-bottom: 20px;
 }
 
-.controls {
-  margin: 30px 0;
-}
-
-.play-button {
-  background-color: #1db954;
-  color: white;
-  font-size: 24px;
-  padding: 15px 25px;
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.play-button:hover {
-  background-color: #1ed760;
-}
-
-audio {
-  display: none;
-}
-
-.search-input {
-  padding: 10px;
-  border-radius: 25px;
-  border: none;
-  width: 80%;
-  max-width: 300px;
-  margin-top: 20px;
-  font-size: 16px;
-}
-
-.footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background-color: #1e1e1e;
-  padding: 10px 0;
-}
-
-.footer nav {
+.control-icons {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 30px;
+  margin: 20px 0;
 }
 
-.footer a {
+.icon-btn {
+  background: none;
+  border: none;
+  font-size: 28px;
   color: white;
-  text-decoration: none;
-  font-size: 14px;
+  cursor: pointer;
+}
+
+.play-main {
+  font-size: 36px;
+}
+
+#progressBar {
+  width: 80%;
+  margin: 10px 0 20px 0;
+  accent-color: #1db954;
 }
 
 .like-container {
@@ -96,8 +67,31 @@ audio {
   transform: scale(1.2);
 }
 
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #1e1e1e;
+  padding: 10px 0;
+  z-index: 10;
+}
+
+.footer nav {
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
 .nav-icon {
   font-size: 20px;
   margin-bottom: 4px;
 }
 
+audio {
+  display: none;
+}
