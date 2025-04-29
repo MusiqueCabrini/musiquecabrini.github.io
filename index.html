@@ -7,29 +7,49 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="app-container"> <!-- AJOUTÉ -->
-    <img src="cropped-logo_cabrini_couleur.png" alt="Couverture" class="cover">
-    <h2>UNIS PAR NOS VALEURS</h2>
-    <p class="artist">Élèves de Cabrini</p>
 
-    <div class="controls">
-      <button id="playPause" class="play-button">►</button>
-    </div>
+  <!-- Image de couverture -->
+  <img src="cropped-logo_cabrini_couleur.png" alt="Couverture" class="cover">
 
-    <audio id="audio">
-      <source src="ma-musique.mp3" type="audio/mpeg">
-      Votre navigateur ne supporte pas l'audio.
-    </audio>
+  <!-- Titre et artiste -->
+  <h2>UNIS PAR NOS VALEURS</h2>
+  <p class="artist">Élèves de Cabrini</p>
 
-    <div class="footer">
-      <nav>
-        <a href="index.html">Accueil</a>
-        <a href="recherche.html">Recherche</a>
-        <a href="bibliotheque.html">Bibliothèque</a>
-      </nav>
-    </div>
-  </div> <!-- FERMETURE AJOUTÉE -->
+  <!-- Bouton play/pause -->
+  <div class="controls">
+    <button id="playPause" class="play-button">►</button>
+  </div>
 
+  <!-- Audio -->
+  <audio id="audio">
+    <source src="ma-musique.mp3" type="audio/mpeg">
+    Votre navigateur ne supporte pas l'audio.
+  </audio>
+
+  <!-- ❤️ Cœur "like" -->
+  <div class="like-container">
+    <span id="heart" class="heart">🤍</span>
+  </div>
+
+  <!-- Navigation en bas -->
+  <div class="footer">
+    <nav>
+      <a href="index.html">
+        <div class="nav-icon">🏠</div>
+        Accueil
+      </a>
+      <a href="recherche.html">
+        <div class="nav-icon">🔍</div>
+        Recherche
+      </a>
+      <a href="bibliotheque.html">
+        <div class="nav-icon">📚</div>
+        Bibliothèque
+      </a>
+    </nav>
+  </div>
+
+  <!-- Script JS -->
   <script>
     const audio = document.getElementById('audio');
     const playPauseBtn = document.getElementById('playPause');
@@ -44,27 +64,14 @@
       }
     });
 
-    <div class="like-container">
-  <span id="heart" class="heart">🤍</span>
-</div>
+    const heart = document.getElementById('heart');
+    let liked = false;
 
-<div class="footer">
-  <nav>
-    <a href="index.html">
-      <div class="nav-icon">🏠</div>
-      Accueil
-    </a>
-    <a href="recherche.html">
-      <div class="nav-icon">🔍</div>
-      Recherche
-    </a>
-    <a href="bibliotheque.html">
-      <div class="nav-icon">📚</div>
-      Bibliothèque
-    </a>
-  </nav>
-</div>
-
+    heart.addEventListener('click', () => {
+      liked = !liked;
+      heart.textContent = liked ? '❤️' : '🤍';
+    });
   </script>
+
 </body>
 </html>
