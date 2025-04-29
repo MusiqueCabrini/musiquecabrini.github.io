@@ -8,68 +8,68 @@
 </head>
 <body>
   <div class="app-container">
-    <!-- Couverture -->
-    <img src="cropped-logo_cabrini_couleur.png" alt="Couverture" class="cover"/>
-
-    <!-- Infos musique -->
+    <img src="cropped-logo_cabrini_couleur.png" alt="Couverture" class="cover" />
     <h2>UNIS PAR NOS VALEURS</h2>
     <p class="artist">Élèves de Cabrini</p>
 
-    <!-- Boutons de contrôle -->
+    <!-- Contrôles -->
     <div class="control-icons">
-      <button class="icon-btn">⏮️</button>
-      <button id="playPause" class="icon-btn play-main">►</button>
-      <button class="icon-btn">⏭️</button>
+      <button class="icon-btn">
+        <img src="images/prev.png" alt="Précédent" />
+      </button>
+      <button id="playPause" class="icon-btn play-main">
+        <img id="playIcon" src="images/play.png" alt="Lecture" />
+      </button>
+      <button class="icon-btn">
+        <img src="images/next.png" alt="Suivant" />
+      </button>
     </div>
 
-    <!-- Barre de progression -->
     <input type="range" id="progressBar" value="0" max="100" />
 
-    <!-- Bouton like -->
     <div class="like-container">
-      <span id="heart" class="heart">🤍</span>
+      <img id="heart" src="images/heart-outline.png" alt="Like" class="heart" />
     </div>
   </div>
 
-  <!-- Navigation -->
   <div class="footer">
     <nav>
       <a href="index.html">
-        <div class="nav-icon">🏠</div>
+        <img src="images/home.png" alt="Accueil" class="nav-icon" />
         Accueil
       </a>
       <a href="recherche.html">
-        <div class="nav-icon">🔍</div>
+        <img src="images/search.png" alt="Recherche" class="nav-icon" />
         Recherche
       </a>
       <a href="bibliotheque.html">
-        <div class="nav-icon">📚</div>
+        <img src="images/library.png" alt="Bibliothèque" class="nav-icon" />
         Bibliothèque
       </a>
     </nav>
   </div>
 
-  <!-- Audio -->
   <audio id="audio">
     <source src="ma-musique.mp3" type="audio/mpeg" />
     Votre navigateur ne supporte pas l'audio.
   </audio>
 
-  <!-- Script JS -->
   <script>
     const audio = document.getElementById('audio');
     const playPauseBtn = document.getElementById('playPause');
+    const playIcon = document.getElementById('playIcon');
     const progressBar = document.getElementById('progressBar');
     const heart = document.getElementById('heart');
+
     let liked = false;
 
     playPauseBtn.addEventListener('click', () => {
       if (audio.paused) {
         audio.play();
-        playPauseBtn.textContent = '❚❚';
+        playIcon.src = 'images/pause.png';
       } else {
         audio.pause();
-        playPauseBtn.textContent = '►';
+        playIcon.src = 'images/play.png';
       }
     });
 
@@ -86,7 +86,7 @@
 
     heart.addEventListener('click', () => {
       liked = !liked;
-      heart.textContent = liked ? '❤️' : '🤍';
+      heart.src = liked ? 'images/heart-filled.png' : 'images/heart-outline.png';
     });
   </script>
 </body>
