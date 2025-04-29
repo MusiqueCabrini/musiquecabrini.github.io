@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ma Musique</title>
+  <title>Unis par nos Valeurs</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="app-container">
     <div class="album-section">
-      <img src="cover.jpg" alt="Couverture" class="cover">
-      <h2>TITRE DE LA MUSIQUE</h2>
-      <p class="artist">Nom de l'artiste</p>
+      <img src="cover.png" alt="Couverture" class="cover">
+      <h2>UNIS PAR NOS VALEURS</h2>
+      <p class="artist">Élèves de Cabrini</p>
     </div>
 
     <div class="controls">
@@ -25,9 +25,9 @@
 
     <div class="footer">
       <nav>
-        <a href="#">Accueil</a>
-        <a href="#">Recherche</a>
-        <a href="#">Bibliothèque</a>
+        <a href="index.html">Accueil</a>
+        <a href="recherche.html">Recherche</a>
+        <a href="bibliotheque.html">Bibliothèque</a>
       </nav>
     </div>
   </div>
@@ -39,10 +39,10 @@
     playPauseBtn.addEventListener('click', () => {
       if (audio.paused) {
         audio.play();
-        playPauseBtn.textContent = '❚❚'; // Pause icon
+        playPauseBtn.textContent = '❚❚';
       } else {
         audio.pause();
-        playPauseBtn.textContent = '►'; // Play icon
+        playPauseBtn.textContent = '►';
       }
     });
   </script>
