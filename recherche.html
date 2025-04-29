@@ -10,14 +10,59 @@
   <div class="app-container">
     <h2>Recherche</h2>
     <input type="text" placeholder="Rechercher une musique..." class="search-input">
+
+    <div class="track-list">
+      <div class="track">
+        <div class="track-info">
+          <p class="track-title">Song Title</p>
+          <p class="track-artist">Singer</p>
+        </div>
+        <img class="like-icon" src="images/heart-outline.png" alt="Like">
+      </div>
+
+      <div class="track">
+        <div class="track-info">
+          <p class="track-title">Song Title</p>
+          <p class="track-artist">Singer</p>
+        </div>
+        <img class="like-icon" src="images/heart-outline.png" alt="Like">
+      </div>
+
+      <div class="track">
+        <div class="track-info">
+          <p class="track-title">Song Title</p>
+          <p class="track-artist">Singer</p>
+        </div>
+        <img class="like-icon" src="images/heart-outline.png" alt="Like">
+      </div>
+    </div>
   </div>
 
   <div class="footer">
     <nav>
-      <a href="index.html">Accueil</a>
-      <a href="recherche.html">Recherche</a>
-      <a href="bibliotheque.html">Bibliothèque</a>
+      <a href="index.html">
+        <img src="images/home.png" alt="Accueil" class="nav-icon" />
+        Accueil
+      </a>
+      <a href="recherche.html">
+        <img src="images/search.png" alt="Recherche" class="nav-icon" />
+        Recherche
+      </a>
+      <a href="bibliotheque.html">
+        <img src="images/library.png" alt="Bibliothèque" class="nav-icon" />
+        Bibliothèque
+      </a>
     </nav>
   </div>
+
+  <script>
+    const hearts = document.querySelectorAll('.like-icon');
+    hearts.forEach((heart) => {
+      heart.addEventListener('click', () => {
+        const liked = heart.src.includes('heart-outline.png');
+        heart.src = liked ? 'images/heart-filled.png' : 'images/heart-outline.png';
+      });
+    });
+  </script>
 </body>
 </html>
