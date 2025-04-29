@@ -8,42 +8,43 @@
 </head>
 <body>
   <div class="app-container">
-    <img src="cropped-logo_cabrini_couleur.png" alt="Couverture" class="cover" />
+    <img src="cropped-logo_cabrini_couleur.png" alt="Logo Cabrini" class="cover" />
     <h2>UNIS PAR NOS VALEURS</h2>
     <p class="artist">Élèves de Cabrini</p>
 
     <!-- Contrôles -->
     <div class="control-icons">
       <button class="icon-btn">
-        <img src="images/prev.png" alt="Précédent" />
+        <img src="Previous-Button-PNG-HD-Image.png" alt="Précédent" />
       </button>
       <button id="playPause" class="icon-btn play-main">
-        <img id="playIcon" src="images/play.png" alt="Lecture" />
+        <img id="playIcon" src="png-clipart-music-computer-icons-button-playlist-play-button-angle-white.png" alt="Lecture" />
       </button>
       <button class="icon-btn">
-        <img src="images/next.png" alt="Suivant" />
+        <img src="png-clipart-computer-icons-button-next-symbol-arrow.png" alt="Suivant" />
       </button>
     </div>
 
     <input type="range" id="progressBar" value="0" max="100" />
 
     <div class="like-container">
-      <img id="heart" src="images/heart-outline.png" alt="Like" class="heart" />
+      <img id="heart" src="heart-png-15.png" alt="Like" class="heart" />
     </div>
   </div>
 
+  <!-- Footer -->
   <div class="footer">
     <nav>
       <a href="index.html">
-        <img src="images/home.png" alt="Accueil" class="nav-icon" />
+        <img src="pngtree-house-or-home-building-logo-vector-icon-png-image_315749.jpg" alt="Accueil" class="nav-icon" />
         Accueil
       </a>
       <a href="recherche.html">
-        <img src="images/search.png" alt="Recherche" class="nav-icon" />
+        <img src="images.png" alt="Recherche" class="nav-icon" />
         Recherche
       </a>
       <a href="bibliotheque.html">
-        <img src="images/library.png" alt="Bibliothèque" class="nav-icon" />
+        <img src="png-clipart-book-stack-computer-icons-library-books-angle.png" alt="Bibliothèque" class="nav-icon" />
         Bibliothèque
       </a>
     </nav>
@@ -66,10 +67,10 @@
     playPauseBtn.addEventListener('click', () => {
       if (audio.paused) {
         audio.play();
-        playIcon.src = 'images/pause.png';
+        playIcon.src = 'png-clipart-media-control-pause-button.png';
       } else {
         audio.pause();
-        playIcon.src = 'images/play.png';
+        playIcon.src = 'png-clipart-music-computer-icons-button-playlist-play-button-angle-white.png';
       }
     });
 
@@ -86,7 +87,7 @@
 
     heart.addEventListener('click', () => {
       liked = !liked;
-      heart.src = liked ? 'images/heart-filled.png' : 'images/heart-outline.png';
+      heart.src = liked ? 'png-clipart-heart-computer-icons-love-symbol-heart.png' : 'heart-png-15.png';
     });
   </script>
 </body>
