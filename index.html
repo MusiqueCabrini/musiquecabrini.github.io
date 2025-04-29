@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ma Musique</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <div class="album-section">
+      <img src="cover.jpg" alt="Couverture" class="cover">
+      <h2>TITRE DE LA MUSIQUE</h2>
+      <p class="artist">Nom de l'artiste</p>
+    </div>
+
+    <div class="controls">
+      <button id="playPause" class="play-button">►</button>
+    </div>
+
+    <audio id="audio">
+      <source src="ma-musique.mp3" type="audio/mpeg">
+      Votre navigateur ne supporte pas l'audio.
+    </audio>
+
+    <div class="footer">
+      <nav>
+        <a href="#">Accueil</a>
+        <a href="#">Recherche</a>
+        <a href="#">Bibliothèque</a>
+      </nav>
+    </div>
+  </div>
+
+  <script>
+    const audio = document.getElementById('audio');
+    const playPauseBtn = document.getElementById('playPause');
+
+    playPauseBtn.addEventListener('click', () => {
+      if (audio.paused) {
+        audio.play();
+        playPauseBtn.textContent = '❚❚'; // Pause icon
+      } else {
+        audio.pause();
+        playPauseBtn.textContent = '►'; // Play icon
+      }
+    });
+  </script>
+</body>
+</html>
