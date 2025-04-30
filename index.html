@@ -292,43 +292,6 @@
 .product-card button:hover {
   background-color: #e0c200;
 }
-    .customizer {
-  background-color: #2e2e2e;
-  border-radius: 12px;
-  padding: 20px;
-  text-align: center;
-  width: 300px;
-  margin: auto;
-  border: 2px solid #FFD700;
-}
-
-.customizer img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  margin: 15px 0;
-}
-
-.color-options {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin: 15px 0;
-}
-
-.color-btn {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  border: none;
-  cursor: pointer;
-  transition: transform 0.2s;
-}
-
-.color-btn:hover {
-  transform: scale(1.2);
-}
-
   </style>
 </head>
 <body>
@@ -400,18 +363,10 @@
       <iframe src="modele-3d.html"></iframe>
     </section>
 
-    <p><strong>Sonora</strong> est un projet innovant développé en terminale STI2D, conçu pour offrir à la fois design et fonctionnalité. Chaque pièce est personnalisable, permettant à l'utilisateur de choisir ses propres couleurs et options.</p>
-  
-  <ul>
-    <li><strong>Matériau :</strong> PLA (impression 3D)</li>
-    <li><strong>Dimensions :</strong> 100 mm x 60 mm x 40 mm</li>
-    <li><strong>Personnalisation :</strong> Couleur extérieure, texture, logo</li>
-    <li><strong>Fabrication :</strong> Impression 3D avec finition manuelle</li>
-    <li><strong>Utilisation :</strong> (Expliquer brièvement l’objectif ou l’usage de l’objet : déco, support, gadget utile...)</li>
-  </ul>
-
-  <p>Ce projet a été conçu dans le cadre de l’épreuve de projet de spécialité STI2D et témoigne d’un travail autour de l’innovation, du design et de l’écoconception.</p>
-</section>
+    <section id="infos">
+      <h2>Informations Techniques</h2>
+      <p>Ici seront détaillées les caractéristiques techniques de l’amplificateur Sonaro : dimensions, matériaux, tests acoustiques, conception assistée par ordinateur, etc.</p>
+    </section>
 
     <section id="acheter">
   <h2 style="text-align: center;">Acheter</h2>
@@ -420,22 +375,16 @@
       <h3>Sonora Classique</h3>
       <img src="final-projet.jpg" alt="Modèle Classique">
       <p class="price">29,96 €</p>
+      <p class="monthly">ou 1,25 €/mois pendant 24 mois</p>
       <button>Bientôt disponible</button>
     </div>
     <div class="product-card">
-      <div class="customizer">
-  <h3>Sonora Personnalisé</h3>
-  <img id="productImage" src="projet2-noir.png" alt="Sonora Personnalisé">
-  <div class="color-options">
-    <p>Choisir une couleur :</p>
-    <button class="color-btn" data-color="noir" style="background-color: black;"></button>
-    <button class="color-btn" data-color="bleu" style="background-color: blue;"></button>
-    <button class="color-btn" data-color="rouge" style="background-color: red;"></button>
-  </div>
-  <p class="price">39,96 €</p>
-  <button>Bientôt disponible</button>
-</div>
-
+      <h3>Sonora Personnalisé</h3>
+      <img src="projet2.jpg" alt="Modèle Personnalisé">
+      <p class="price">39,96 €</p>
+      <p class="monthly">ou 1,66 €/mois pendant 24 mois</p>
+      <button>Acheter</button>
+    </div>
   </div>
 </section>
   </main>
@@ -464,16 +413,5 @@
       });
     }
   </script>
-  <script>
-  const colorButtons = document.querySelectorAll(".color-btn");
-  const productImage = document.getElementById("productImage");
-
-  colorButtons.forEach(button => {
-    button.addEventListener("click", () => {
-      const color = button.getAttribute("data-color");
-      productImage.src = `projet2-${color}.png`; // Assurez-vous d’avoir les images projet2-noir.png, projet2-bleu.png, etc.
-    });
-  });
-</script>
 </body>
 </html>
