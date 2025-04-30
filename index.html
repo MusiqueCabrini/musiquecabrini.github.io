@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sonora (France)</title>
   <link rel="icon" href="logo-projet-removebg-preview.png" type="image/x-icon">
   <style>
@@ -13,6 +13,54 @@
       font-family: 'Raleway', sans-serif;
       background-color: #1a1a1a;
       color: #f0f0f0;
+      position: relative;
+    }
+
+    /* Bandeaux horizontaux */
+    .bandeau {
+      position: fixed;
+      left: 0;
+      width: 100%;
+      height: 10px;
+      background-color: #FFD700;
+      z-index: 1000;
+    }
+
+    .bandeau.top {
+      top: 0;
+    }
+
+    .bandeau.bottom {
+      bottom: 0;
+    }
+
+    /* Carrés décoratifs */
+    .carre {
+      position: fixed;
+      width: 20px;
+      height: 20px;
+      background-color: #FFD700;
+      z-index: 1000;
+    }
+
+    .carre.top-left {
+      top: 10px;
+      left: 10px;
+    }
+
+    .carre.top-right {
+      top: 10px;
+      right: 10px;
+    }
+
+    .carre.bottom-left {
+      bottom: 10px;
+      left: 10px;
+    }
+
+    .carre.bottom-right {
+      bottom: 10px;
+      right: 10px;
     }
 
     header {
@@ -28,8 +76,8 @@
     }
 
     .header-center {
-      flex-grow: 1;
       text-align: center;
+      flex-grow: 1;
       margin-right: 50px;
     }
 
@@ -55,6 +103,7 @@
 
     .image-container {
       position: relative;
+      padding: 0;
       border: 3px solid #FFD700;
       border-radius: 12px;
       display: flex;
@@ -114,14 +163,13 @@
       display: flex;
       justify-content: space-around;
       border-top: 2px solid #444;
-      z-index: 10;
     }
 
     nav a {
       padding: 15px;
       color: #aaa;
       text-decoration: none;
-      font-size: 14px;
+      font-size: 16px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -130,12 +178,6 @@
 
     nav a:hover {
       color: #fff;
-    }
-
-    img.icon {
-      width: 28px;
-      height: 28px;
-      margin-bottom: 5px;
     }
 
     section {
@@ -149,6 +191,12 @@
       display: block;
       opacity: 1;
       transform: translateY(0);
+    }
+
+    img.icon {
+      width: 28px;
+      height: 28px;
+      margin-bottom: 5px;
     }
 
     audio {
@@ -168,10 +216,9 @@
       left: 0;
       height: 60px;
       padding: 5px;
-      z-index: 5;
     }
 
-    /* Zoom global pour toutes les images */
+    /* Effet zoom pour TOUTES les images (galerie incluse) */
     img:hover {
       transform: scale(1.03);
       transition: transform 0.4s ease;
@@ -179,11 +226,21 @@
   </style>
 </head>
 <body>
+  <!-- Bandeaux horizontaux -->
+  <div class="bandeau top"></div>
+  <div class="bandeau bottom"></div>
+
+  <!-- Carrés décoratifs -->
+  <div class="carre top-left"></div>
+  <div class="carre top-right"></div>
+  <div class="carre bottom-left"></div>
+  <div class="carre bottom-right"></div>
+
   <header>
     <img src="cabrini_logo-removebg-preview.png" alt="Logo" class="logo">
     <div class="header-center">
       <h1>Sonora</h1>
-      <div class="subtitle">Un projet innovant alliant technologie et accessibilité.</div>
+      <div class="subtitle">Un projet innovant alliant technologie, et accessibilité.</div>
     </div>
   </header>
 
@@ -197,9 +254,9 @@
         </div>
       </div>
       <h2>Accueil</h2>
-      <p>Bienvenue sur le site officiel de Sonora. Ce projet a été imaginé et conçu dans le but d'offrir une solution à la fois pratique, esthétique et innovante pour améliorer l'expérience sonore des utilisateurs de smartphones. Il s'agit d'un support en plastique recyclable intégrant un amplificateur de son entièrement passif, sans composants électroniques, qui permet d'amplifier naturellement le son des haut-parleurs d'un smartphone.
-      <br><br>
-      Ce projet a été réalisé en collaboration entre des élèves de STMG et de STI2D du lycée Cabrini. Cette alliance entre profils techniques et marketing a permis de couvrir tous les aspects du développement : de la conception assistée par ordinateur à la stratégie de communication. Notre objectif est simple : allier design, technologie et créativité pour offrir un objet utile, original et accessible à tous.</p>
+      <p>Bienvenue sur le site officiel de Sonora. Ce projet a été imaginé et conçu dans le but d'offrir une solution à la fois pratique, esthétique et innovante pour améliorer l'expérience sonore des utilisateurs de smartphones. Il s'agit d'un support en plastique recyclable intégrant un amplificateur de son entièrement passif, sans composants électroniques, qui permet d'amplifier naturellement le son des haut-parleurs d'un smartphone. En complément, nous avons intégré une dimension artistique à travers des musiques générées par intelligence artificielle, afin de faire rayonner les valeurs de notre établissement.
+<br><br>
+Ce projet a été réalisé en collaboration entre des élèves de STMG et de STI2D du lycée Cabrini. Cette alliance entre profils techniques et marketing a permis de couvrir tous les aspects du développement : de la conception assistée par ordinateur à la stratégie de communication. Notre objectif est simple : allier design, technologie et créativité pour offrir un objet utile, original et accessible à tous.</p>
     </section>
 
     <section id="test">
@@ -224,7 +281,7 @@
 
     <section id="infos">
       <h2>Informations Techniques</h2>
-      <p>Ici seront détaillées les caractéristiques techniques de l’amplificateur Sonora : dimensions, matériaux, tests acoustiques, conception assistée par ordinateur, etc.</p>
+      <p>Ici seront détaillées les caractéristiques techniques de l’amplificateur Sonaro : dimensions, matériaux, tests acoustiques, conception assistée par ordinateur, etc.</p>
     </section>
 
     <section id="acheter">
@@ -241,43 +298,39 @@
   <img src="ceceee18-faf7-4afd-aff6-bd4e04a670d4.png" alt="Décoration" class="footer-img">
 
   <nav>
-    <a href="#" onclick="openTab('accueil')">
-      <img src="accueil-maison.png" alt="Accueil" class="icon">
-      Accueil
-    </a>
-    <a href="#" onclick="openTab('test')">
-      <img src="-volume-icon.png" alt="Test" class="icon">
-      Test Son
+        <a href="#" onclick="openTab('test')">
+      <img src="haut-parleur.png" alt="Test Son" class="icon">
+      Test
     </a>
     <a href="#" onclick="openTab('musique')">
-      <img src="music-note-icon.png" alt="Musique" class="icon">
+      <img src="musique.png" alt="Musique IA" class="icon">
       Musique
     </a>
     <a href="#" onclick="openTab('modele3d')">
-      <img src="3d-logo.png" alt="3D" class="icon">
-      3D
+      <img src="modelisation-3d.png" alt="Modèle 3D" class="icon">
+      Modèle
     </a>
     <a href="#" onclick="openTab('infos')">
-      <img src="info-logo.png" alt="Infos" class="icon">
+      <img src="info.png" alt="Infos" class="icon">
       Infos
     </a>
     <a href="#" onclick="openTab('acheter')">
-      <img src="caddie-projet.png" alt="Acheter" class="icon">
+      <img src="acheter.png" alt="Acheter" class="icon">
       Acheter
     </a>
   </nav>
 
   <script>
-    function openTab(id) {
-      document.querySelectorAll('section').forEach(section => {
-        section.classList.remove('active');
-        section.style.display = 'none';
+    function openTab(tabId) {
+      const sections = document.querySelectorAll("main section");
+      sections.forEach(section => {
+        section.classList.remove("active");
       });
-      const target = document.getElementById(id);
-      target.style.display = 'block';
-      requestAnimationFrame(() => {
-        target.classList.add('active');
-      });
+
+      const selected = document.getElementById(tabId);
+      if (selected) {
+        selected.classList.add("active");
+      }
     }
   </script>
 </body>
