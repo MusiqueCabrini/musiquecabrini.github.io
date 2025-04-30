@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sonora (France)</title>
   <link rel="icon" href="logo-projet-removebg-preview.png" type="image/x-icon">
   <style>
@@ -13,56 +13,7 @@
       font-family: 'Raleway', sans-serif;
       background-color: #1a1a1a;
       color: #f0f0f0;
-      position: relative;
     }
-
-    /* Bandeaux horizontaux */
-    .bandeau {
-      position: fixed;
-      left: 0;
-      width: 100%;
-      height: 10px;
-      background-color: #FFD700;
-      z-index: 1000;
-    }
-
-    .bandeau.top {
-      top: 0;
-    }
-
-    .bandeau.bottom {
-      bottom: 0;
-    }
-
-    /* Carrés décoratifs */
-    .carre {
-      position: fixed;
-      width: 20px;
-      height: 20px;
-      background-color: #FFD700;
-      z-index: 1000;
-    }
-
-    .carre.top-left {
-      top: 10px;
-      left: 10px;
-    }
-
-    .carre.top-right {
-      top: 10px;
-      right: 10px;
-    }
-
-    .carre.bottom-left {
-      bottom: 10px;
-      left: 10px;
-    }
-
-    .carre.bottom-right {
-      bottom: 10px;
-      right: 10px;
-    }
-
     header {
       padding: 10px 30px;
       background-color: #2e2e2e;
@@ -70,28 +21,23 @@
       align-items: center;
       justify-content: space-between;
     }
-
     header img.logo {
       height: 50px;
     }
-
     .header-center {
       text-align: center;
       flex-grow: 1;
       margin-right: 50px;
     }
-
     .header-center h1 {
       font-family: 'Orbitron', sans-serif;
       font-size: 32px;
       margin: 5px 0;
     }
-
     .subtitle {
       font-size: 16px;
       color: #cccccc;
     }
-
     main {
       padding: 10px 20px 80px;
       min-height: 80vh;
@@ -100,7 +46,6 @@
       margin: 20px;
       background-color: #1c1c1c;
     }
-
     .image-container {
       position: relative;
       padding: 0;
@@ -114,7 +59,6 @@
       box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
       overflow: hidden;
     }
-
     .image-container img {
       width: auto;
       height: 100%;
@@ -122,11 +66,9 @@
       display: block;
       transition: transform 0.5s ease;
     }
-
     .image-container:hover img {
       transform: scale(1.05);
     }
-
     .btn-overlay {
       position: absolute;
       bottom: 10px;
@@ -136,11 +78,9 @@
       opacity: 0;
       transition: opacity 0.3s ease;
     }
-
     .image-container:hover .btn-overlay {
       opacity: 1;
     }
-
     .btn-overlay button {
       background-color: #FFD700;
       border: none;
@@ -150,11 +90,9 @@
       cursor: pointer;
       transition: background-color 0.3s;
     }
-
     .btn-overlay button:hover {
       background-color: #e0c200;
     }
-
     nav {
       position: fixed;
       bottom: 0;
@@ -164,7 +102,6 @@
       justify-content: space-around;
       border-top: 2px solid #444;
     }
-
     nav a {
       padding: 15px;
       color: #aaa;
@@ -175,7 +112,6 @@
       align-items: center;
       font-family: 'Orbitron', sans-serif;
     }
-
     nav a:hover {
       color: #fff;
     }
@@ -186,7 +122,6 @@
       transform: translateY(20px);
       transition: opacity 0.6s ease, transform 0.6s ease;
     }
-
     section.active {
       display: block;
       opacity: 1;
@@ -226,16 +161,6 @@
   </style>
 </head>
 <body>
-  <!-- Bandeaux horizontaux -->
-  <div class="bandeau top"></div>
-  <div class="bandeau bottom"></div>
-
-  <!-- Carrés décoratifs -->
-  <div class="carre top-left"></div>
-  <div class="carre top-right"></div>
-  <div class="carre bottom-left"></div>
-  <div class="carre bottom-right"></div>
-
   <header>
     <img src="cabrini_logo-removebg-preview.png" alt="Logo" class="logo">
     <div class="header-center">
@@ -298,39 +223,43 @@ Ce projet a été réalisé en collaboration entre des élèves de STMG et de ST
   <img src="ceceee18-faf7-4afd-aff6-bd4e04a670d4.png" alt="Décoration" class="footer-img">
 
   <nav>
-        <a href="#" onclick="openTab('test')">
-      <img src="haut-parleur.png" alt="Test Son" class="icon">
-      Test
+    <a href="#" onclick="openTab('accueil')">
+      <img src="accueil-maison.png" alt="Accueil" class="icon">
+      Accueil
+    </a>
+    <a href="#" onclick="openTab('test')">
+      <img src="-volume-icon.png" alt="Test" class="icon">
+      Test Son
     </a>
     <a href="#" onclick="openTab('musique')">
-      <img src="musique.png" alt="Musique IA" class="icon">
+      <img src="music-note-icon.png" alt="Musique" class="icon">
       Musique
     </a>
     <a href="#" onclick="openTab('modele3d')">
-      <img src="modelisation-3d.png" alt="Modèle 3D" class="icon">
-      Modèle
+      <img src="3d-logo.png" alt="3D" class="icon">
+      3D
     </a>
     <a href="#" onclick="openTab('infos')">
-      <img src="info.png" alt="Infos" class="icon">
+      <img src="info-logo.png" alt="Infos" class="icon">
       Infos
     </a>
     <a href="#" onclick="openTab('acheter')">
-      <img src="acheter.png" alt="Acheter" class="icon">
+      <img src="caddie-projet.png" alt="Acheter" class="icon">
       Acheter
     </a>
   </nav>
 
   <script>
-    function openTab(tabId) {
-      const sections = document.querySelectorAll("main section");
-      sections.forEach(section => {
-        section.classList.remove("active");
+    function openTab(id) {
+      document.querySelectorAll('section').forEach(section => {
+        section.classList.remove('active');
+        section.style.display = 'none';
       });
-
-      const selected = document.getElementById(tabId);
-      if (selected) {
-        selected.classList.add("active");
-      }
+      const target = document.getElementById(id);
+      target.style.display = 'block';
+      requestAnimationFrame(() => {
+        target.classList.add('active');
+      });
     }
   </script>
 </body>
