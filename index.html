@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sonaro</title>
+  <title>Sonora (France)</title>
   <link rel="icon" href="logo-projet-removebg-preview.png" type="image/x-icon">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Raleway&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Raleway&display=swap');
 
     body {
       margin: 0;
@@ -24,14 +24,18 @@
     header img.logo {
       height: 50px;
     }
+    header img.logo-right {
+      height: 40px;
+      margin-left: 20px;
+    }
     .header-center {
       text-align: center;
       flex-grow: 1;
       margin-right: 50px;
     }
     .header-center h1 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 28px;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 32px;
       margin: 5px 0;
     }
     .subtitle {
@@ -41,19 +45,26 @@
     main {
       padding: 10px 20px 80px;
       min-height: 80vh;
+      box-shadow: 0 0 25px rgba(200, 200, 200, 0.1);
+      border-radius: 10px;
+      margin: 20px;
+      background-color: #1c1c1c;
     }
     .image-container {
-      padding: 5px;
+      padding: 0;
+      border: 3px solid #FFD700;
       border-radius: 12px;
-      border: 2px solid #FFD700;
       display: flex;
       justify-content: center;
-      margin: 20px 0;
+      margin: 30px auto;
+      max-width: 400px;
+      box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
     }
     .image-container img {
-      max-width: 100%;
+      width: 100%;
       height: auto;
-      border-radius: 8px;
+      border-radius: 10px;
+      display: block;
     }
     nav {
       position: fixed;
@@ -72,7 +83,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Orbitron', sans-serif;
     }
     nav a:hover {
       color: #fff;
@@ -84,8 +95,8 @@
       display: block;
     }
     img.icon {
-      width: 24px;
-      height: 24px;
+      width: 28px;
+      height: 28px;
       margin-bottom: 5px;
     }
     audio {
@@ -103,9 +114,10 @@
   <header>
     <img src="cabrini_logo-removebg-preview.png" alt="Logo" class="logo">
     <div class="header-center">
-      <h1>Sonaro</h1>
+      <h1>Sonora</h1>
       <div class="subtitle">Un projet innovant alliant technologie, et accessibilité.</div>
     </div>
+    <img src="ceceee18-faf7-4afd-aff6-bd4e04a670d4.png" alt="Logo complémentaire" class="logo-right">
   </header>
 
   <main>
