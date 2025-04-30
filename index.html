@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sonora (France)</title>
   <link rel="icon" href="logo-projet-removebg-preview.png" type="image/x-icon">
   <style>
@@ -14,18 +14,6 @@
       background-color: #1a1a1a;
       color: #f0f0f0;
     }
-
-    /* Bandeau du haut */
-    .top-banner {
-      background-color: #FFD700;
-      color: #1a1a1a;
-      text-align: center;
-      padding: 6px 0;
-      font-weight: bold;
-      font-size: 14px;
-    }
-
-    /* Header */
     header {
       padding: 10px 30px;
       background-color: #2e2e2e;
@@ -33,28 +21,23 @@
       align-items: center;
       justify-content: space-between;
     }
-
     header img.logo {
       height: 50px;
     }
-
     .header-center {
       text-align: center;
       flex-grow: 1;
       margin-right: 50px;
     }
-
     .header-center h1 {
       font-family: 'Orbitron', sans-serif;
       font-size: 32px;
       margin: 5px 0;
     }
-
     .subtitle {
       font-size: 16px;
       color: #cccccc;
     }
-
     main {
       padding: 10px 20px 80px;
       min-height: 80vh;
@@ -63,7 +46,6 @@
       margin: 20px;
       background-color: #1c1c1c;
     }
-
     .image-container {
       position: relative;
       padding: 0;
@@ -71,20 +53,18 @@
       border-radius: 12px;
       display: flex;
       justify-content: center;
-      margin: 30px auto 10px;
+      margin: 30px auto;
       max-width: 500px;
       height: 320px;
       box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
       overflow: hidden;
     }
-
     .image-container img {
       width: auto;
       height: 100%;
       border-radius: 10px;
       display: block;
     }
-
     .btn-overlay {
       position: absolute;
       bottom: 10px;
@@ -94,11 +74,9 @@
       opacity: 0;
       transition: opacity 0.3s ease;
     }
-
     .image-container:hover .btn-overlay {
       opacity: 1;
     }
-
     .btn-overlay button {
       background-color: #FFD700;
       border: none;
@@ -108,30 +86,9 @@
       cursor: pointer;
       transition: background-color 0.3s;
     }
-
     .btn-overlay button:hover {
       background-color: #e0c200;
     }
-
-    /* Carrés prénoms */
-    .team-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-      gap: 15px;
-      margin: 30px auto;
-      max-width: 600px;
-      text-align: center;
-    }
-
-    .team-member {
-      background-color: #2e2e2e;
-      padding: 15px;
-      border-radius: 12px;
-      border: 2px solid #FFD700;
-      font-weight: bold;
-      font-family: 'Orbitron', sans-serif;
-    }
-
     nav {
       position: fixed;
       bottom: 0;
@@ -141,7 +98,6 @@
       justify-content: space-around;
       border-top: 2px solid #444;
     }
-
     nav a {
       padding: 15px;
       color: #aaa;
@@ -152,36 +108,29 @@
       align-items: center;
       font-family: 'Orbitron', sans-serif;
     }
-
     nav a:hover {
       color: #fff;
     }
-
     section {
       display: none;
     }
-
     section.active {
       display: block;
     }
-
     img.icon {
       width: 28px;
       height: 28px;
       margin-bottom: 5px;
     }
-
     audio {
       display: block;
       margin: 10px auto;
     }
-
     iframe {
       width: 100%;
       height: 400px;
       border: none;
     }
-
     .footer-img {
       position: fixed;
       bottom: 0;
@@ -189,23 +138,9 @@
       height: 60px;
       padding: 5px;
     }
-
-    /* Bandeau du bas */
-    .bottom-banner {
-      background-color: #FFD700;
-      color: #1a1a1a;
-      text-align: center;
-      font-weight: bold;
-      padding: 6px 0;
-      font-size: 14px;
-      margin-top: 50px;
-    }
   </style>
 </head>
 <body>
-
-  <div class="top-banner">Product Association STMG / SIN</div>
-
   <header>
     <img src="cabrini_logo-removebg-preview.png" alt="Logo" class="logo">
     <div class="header-center">
@@ -223,23 +158,47 @@
           <button onclick="openTab('acheter')">Acheter</button>
         </div>
       </div>
-
-      <!-- NOMS des membres -->
-      <div class="team-grid">
-        <div class="team-member">Nathan</div>
-        <div class="team-member">Nolan</div>
-        <div class="team-member">Inès</div>
-        <div class="team-member">Yanis</div>
-      </div>
-
       <h2>Accueil</h2>
-      <p>Bienvenue sur le site officiel de Sonora. [...]</p>
+           <p>Bienvenue sur le site officiel de Sonora. Ce projet a été imaginé et conçu dans le but d'offrir une solution à la fois pratique, esthétique et innovante pour améliorer l'expérience sonore des utilisateurs de smartphones. Il s'agit d'un support en plastique recyclable intégrant un amplificateur de son entièrement passif, sans composants électroniques, qui permet d'amplifier naturellement le son des haut-parleurs d'un smartphone. En complément, nous avons intégré une dimension artistique à travers des musiques générées par intelligence artificielle, afin de faire rayonner les valeurs de notre établissement.
+<br><br>
+Ce projet a été réalisé en collaboration entre des élèves de STMG et de STI2D du lycée Cabrini. Cette alliance entre profils techniques et marketing a permis de couvrir tous les aspects du développement : de la conception assistée par ordinateur à la stratégie de communication. Notre objectif est simple : allier design, technologie et créativité pour offrir un objet utile, original et accessible à tous.</p>
     </section>
 
-    <!-- Les autres sections sont inchangées... -->
-  </main>
+    <section id="test">
+      <h2>Page Test Son</h2>
+      <p>Cliquez sur les sons ci-dessous pour tester la puissance de l'amplification :</p>
+      <audio controls src="test-son-1.mp3"></audio>
+      <audio controls src="test-son-2.mp3"></audio>
+    </section>
 
-  <div class="bottom-banner">2025C</div>
+    <section id="musique">
+      <h2>Musique IA</h2>
+      <p>Voici des morceaux générés par intelligence artificielle, mettant en valeur les valeurs de l'établissement :</p>
+      <audio controls src="musique-cabrini-1.mp3"></audio>
+      <audio controls src="musique-cabrini-2.mp3"></audio>
+    </section>
+
+    <section id="modele3d">
+      <h2>Modèle 3D</h2>
+      <p>Visualisez ici le présentoir dans son ensemble :</p>
+      <iframe src="modele-3d.html"></iframe>
+    </section>
+
+    <section id="infos">
+      <h2>Informations Techniques</h2>
+      <p>Ici seront détaillées les caractéristiques techniques de l’amplificateur Sonaro : dimensions, matériaux, tests acoustiques, conception assistée par ordinateur, etc.</p>
+    </section>
+
+    <section id="acheter">
+      <h2>Acheter</h2>
+      <p>Prix : à partir de 19,90€</p>
+      <p>Version personnalisée avec gravure ou couleur : 29,90€</p>
+      <p>Galerie de visuels :</p>
+      <img src="projet1.jpg" alt="Modèle 1" style="width: 45%; margin: 5px;">
+      <img src="projet2.jpg" alt="Modèle 2" style="width: 45%; margin: 5px;">
+      <p>Personnalisez votre amplificateur via notre formulaire bientôt disponible.</p>
+    </section>
+  </main>
 
   <img src="ceceee18-faf7-4afd-aff6-bd4e04a670d4.png" alt="Décoration" class="footer-img">
 
@@ -278,6 +237,5 @@
       document.getElementById(id).classList.add('active');
     }
   </script>
-
 </body>
 </html>
