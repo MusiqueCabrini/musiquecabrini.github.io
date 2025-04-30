@@ -1,94 +1,128 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Unis par nos Valeurs</title>
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projet Cabrini 2025</title>
+<style>
+body {
+margin: 0;
+font-family: Arial, sans-serif;
+background-color: #1a1a1a;
+color: #f0f0f0;
+}
+header {
+padding: 30px;
+text-align: center;
+background-color: #2e2e2e;
+}
+main {
+padding: 20px;
+min-height: 80vh;
+}
+nav {
+position: fixed;
+bottom: 0;
+width: 100%;
+background-color: #121212;
+display: flex;
+justify-content: space-around;
+border-top: 2px solid #444;
+}
+nav a {
+padding: 15px;
+color: #aaa;
+text-decoration: none;
+font-size: 16px;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+nav a:hover {
+color: #fff;
+}
+section {
+display: none;
+}
+section.active {
+display: block;
+}
+img.icon {
+width: 24px;
+height: 24px;
+margin-bottom: 5px;
+}
+audio {
+display: block;
+margin: 10px auto;
+}
+iframe {
+width: 100%;
+height: 400px;
+border: none;
+}
+</style>
 </head>
 <body>
-  <div class="app-container">
-    <img src="images.png" alt="Logo Cabrini" class="cover" />
-    <h2>UNIS PAR NOS VALEURS</h2>
-    <p class="artist">Élèves de Cabrini</p>
+<header>
+<h1>Projet Cabrini 2025</h1>
+<p>Un projet innovant alliant technologie, musique IA et accessibilité.</p>
+</header>
 
-    <!-- Contrôles -->
-    <div class="control-icons">
-      <button class="icon-btn">
-        <img src="Previous-Button-PNG-HD-Image.png" alt="Précédent" />
-      </button>
-      <button id="png-clipart-computer-icons-button-pause-button-text-logo" class="icon-btn play-main">
-        <img id="playIcon" src="png-clipart-music-computer-icons-playbutton-logo-number-thumbnail.png" alt="Lecture" />
-      </button>
-      <button class="icon-btn">
-        <img src="png-clipart-computer-icons-button-encapsulated-postscript-next-button-angle.png" alt="Suivant" />
-      </button>
-    </div>
+<main>
+<section id="accueil" class="active">
+<h2>Accueil</h2>
+<p>Bienvenue sur le site de notre projet. Nous avons conçu un présentoir pour smartphone intégrant de la lumière LED, un amplificateur de son passif, un QR code lié à ce site, et une dimension artistique avec des musiques IA.
+<br><br>Ce projet a été réalisé en équipe par des élèves de STI2D, EE et STMG du lycée Cabrini. Notre objectif : allier design, technologie et communication.</p>
+</section>
 
-    <input type="range" id="progressBar" value="0" max="100" />
+<section id="test">
+<h2>Page Test Son</h2>
+<p>Cliquez sur les sons ci-dessous pour tester la puissance de l'amplification :</p>
+<audio controls src="test-son-1.mp3"></audio>
+<audio controls src="test-son-2.mp3"></audio>
+</section>
 
-    <div class="like-container">
-      <img id="heart" src="heart-png-15.png" alt="Like" class="heart" />
-    </div>
-  </div>
+<section id="musique">
+<h2>Musique IA</h2>
+<p>Voici des morceaux générés par intelligence artificielle, mettant en valeur les valeurs de l'établissement :</p>
+<audio controls src="musique-cabrini-1.mp3"></audio>
+<audio controls src="musique-cabrini-2.mp3"></audio>
+</section>
 
-  <!-- Footer -->
-  <div class="footer">
-    <nav>
-      <a href="index.html">
-        <img src="pngtree-house-or-home-building-property-png-image_5292266.p.jpg" alt="Accueil" class="nav-icon" />
-        Accueil
-      </a>
-      <a href="recherche.html">
-        <img src="images.png" alt="Recherche" class="nav-icon" />
-        Recherche
-      </a>
-      <a href="bibliotheque.html">
-        <img src="png-clipart-book-stack-computer-icons-library-books-angle.png" alt="Bibliothèque" class="nav-icon" />
-        Bibliothèque
-      </a>
-    </nav>
-  </div>
+<section id="modele3d">
+<h2>Modèle 3D</h2>
+<p>Visualisez ici le présentoir dans son ensemble :</p>
+<iframe src="modele-3d.html"></iframe>
+</section>
+</main>
 
-  <audio id="audio">
-    <source src="ma-musique.mp3" type="audio/mpeg" />
-    Votre navigateur ne supporte pas l'audio.
-  </audio>
+<nav>
+<a href="#" onclick="openTab('accueil')">
+<img src="home-icon.png" alt="Accueil" class="icon">
+Accueil
+</a>
+<a href="#" onclick="openTab('test')">
+<img src="sound-icon.png" alt="Test" class="icon">
+Test Son
+</a>
+<a href="#" onclick="openTab('musique')">
+<img src="music-icon.png" alt="Musique" class="icon">
+Musique
+</a>
+<a href="#" onclick="openTab('modele3d')">
+<img src="3d-icon.png" alt="3D" class="icon">
+3D
+</a>
+</nav>
 
-  <script>
-    const audio = document.getElementById('audio');
-    const playPauseBtn = document.getElementById('playPause');
-    const playIcon = document.getElementById('playIcon');
-    const progressBar = document.getElementById('progressBar');
-    const heart = document.getElementById('heart');
-
-    let liked = false;
-
-    playPauseBtn.addEventListener('click', () => {
-      if (audio.paused) {
-        audio.play();
-        playIcon.src = 'png-clipart-media-control-pause-button.png';
-      } else {
-        audio.pause();
-        playIcon.src = 'png-clipart-music-computer-icons-button-playlist-play-button-angle-white.png';
-      }
-    });
-
-    audio.addEventListener('timeupdate', () => {
-      if (audio.duration) {
-        const progress = (audio.currentTime / audio.duration) * 100;
-        progressBar.value = progress;
-      }
-    });
-
-    progressBar.addEventListener('input', () => {
-      audio.currentTime = (progressBar.value / 100) * audio.duration;
-    });
-
-    heart.addEventListener('click', () => {
-      liked = !liked;
-      heart.src = liked ? 'png-clipart-heart-computer-icons-love-symbol-heart.png' : 'heart-png-15.png';
-    });
-  </script>
+<script>
+function openTab(id) {
+document.querySelectorAll('section').forEach(section => {
+section.classList.remove('active');
+});
+document.getElementById(id).classList.add('active');
+}
+</script>
 </body>
 </html>
