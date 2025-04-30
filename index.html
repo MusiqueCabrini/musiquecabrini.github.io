@@ -292,7 +292,7 @@
 .product-card button:hover {
   background-color: #e0c200;
 }
-.customizer {
+    .customizer {
   background-color: #2e2e2e;
   border-radius: 12px;
   padding: 20px;
@@ -328,12 +328,8 @@
 .color-btn:hover {
   transform: scale(1.2);
 }
-  </style>
-  
-  <script src="https://cdn.jsdelivr.net/npm/three@0.153.0/build/three.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/three@0.153.0/examples/js/loaders/STLLoader.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/three@0.153.0/examples/js/controls/OrbitControls.js"></script>
 
+  </style>
 </head>
 <body>
   <div class="top-banner">Product Association STMG / SIN</div>
@@ -346,8 +342,6 @@
     </div>
   </header>
 
-  <div id="viewer3d" style="width: 100%; height: 500px;"></div>
-  
   <main>
     <section id="accueil" class="active">
       <div class="image-container">
@@ -421,7 +415,8 @@
       <p class="monthly">ou 1,25 €/mois pendant 24 mois</p>
       <button>Bientôt disponible</button>
     </div>
-    <div class="customizer">
+    <div class="product-card">
+      <div class="customizer">
   <h3>Sonora Personnalisé</h3>
   <img id="productImage" src="projet2-noir.png" alt="Sonora Personnalisé">
   <div class="color-options">
@@ -433,6 +428,8 @@
   <p class="price">39,96 €</p>
   <button>Acheter</button>
 </div>
+
+  </div>
 </section>
   </main>
 
@@ -470,52 +467,6 @@
       productImage.src = `projet2-${color}.png`; // Assurez-vous d’avoir les images projet2-noir.png, projet2-bleu.png, etc.
     });
   });
-</script>
-  <script>
-  let scene, camera, renderer, controls;
-
-  function init() {
-    scene = new THREE.Scene();
-    scene.background = new THREE.Color(0x1a1a1a);
-
-    camera = new THREE.PerspectiveCamera(75, window.innerWidth / 500, 0.1, 1000);
-    camera.position.set(0, 0, 100);
-
-    renderer = new THREE.WebGLRenderer({ antialias: true });
-    renderer.setSize(window.innerWidth, 500);
-    document.getElementById("viewer3d").appendChild(renderer.domElement);
-
-    // Contrôles de la souris
-    controls = new THREE.OrbitControls(camera, renderer.domElement);
-    controls.enableDamping = true;
-
-    // Lumière
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
-    scene.add(ambientLight);
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
-    directionalLight.position.set(50, 50, 100).normalize();
-    scene.add(directionalLight);
-
-    // Chargement STL
-    const loader = new THREE.STLLoader();
-    loader.load('sonora.stl', function (geometry) {
-      const material = new THREE.MeshPhongMaterial({ color: 0xffcc00 });
-      const mesh = new THREE.Mesh(geometry, material);
-      mesh.scale.set(1, 1, 1); // adapte si besoin
-      mesh.rotation.x = -Math.PI / 2;
-      scene.add(mesh);
-    });
-
-    animate();
-  }
-
-  function animate() {
-    requestAnimationFrame(animate);
-    controls.update();
-    renderer.render(scene, camera);
-  }
-
-  init();
 </script>
 </body>
 </html>
