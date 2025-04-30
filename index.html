@@ -14,6 +14,7 @@
       background-color: #1a1a1a;
       color: #f0f0f0;
     }
+
     header {
       padding: 10px 30px;
       background-color: #2e2e2e;
@@ -21,23 +22,28 @@
       align-items: center;
       justify-content: space-between;
     }
+
     header img.logo {
       height: 50px;
     }
+
     .header-center {
-      text-align: center;
       flex-grow: 1;
+      text-align: center;
       margin-right: 50px;
     }
+
     .header-center h1 {
       font-family: 'Orbitron', sans-serif;
       font-size: 32px;
       margin: 5px 0;
     }
+
     .subtitle {
       font-size: 16px;
       color: #cccccc;
     }
+
     main {
       padding: 10px 20px 80px;
       min-height: 80vh;
@@ -46,9 +52,9 @@
       margin: 20px;
       background-color: #1c1c1c;
     }
+
     .image-container {
       position: relative;
-      padding: 0;
       border: 3px solid #FFD700;
       border-radius: 12px;
       display: flex;
@@ -59,6 +65,7 @@
       box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
       overflow: hidden;
     }
+
     .image-container img {
       width: auto;
       height: 100%;
@@ -66,9 +73,11 @@
       display: block;
       transition: transform 0.5s ease;
     }
+
     .image-container:hover img {
       transform: scale(1.05);
     }
+
     .btn-overlay {
       position: absolute;
       bottom: 10px;
@@ -78,9 +87,11 @@
       opacity: 0;
       transition: opacity 0.3s ease;
     }
+
     .image-container:hover .btn-overlay {
       opacity: 1;
     }
+
     .btn-overlay button {
       background-color: #FFD700;
       border: none;
@@ -90,9 +101,11 @@
       cursor: pointer;
       transition: background-color 0.3s;
     }
+
     .btn-overlay button:hover {
       background-color: #e0c200;
     }
+
     nav {
       position: fixed;
       bottom: 0;
@@ -101,19 +114,28 @@
       display: flex;
       justify-content: space-around;
       border-top: 2px solid #444;
+      z-index: 10;
     }
+
     nav a {
       padding: 15px;
       color: #aaa;
       text-decoration: none;
-      font-size: 16px;
+      font-size: 14px;
       display: flex;
       flex-direction: column;
       align-items: center;
       font-family: 'Orbitron', sans-serif;
     }
+
     nav a:hover {
       color: #fff;
+    }
+
+    img.icon {
+      width: 28px;
+      height: 28px;
+      margin-bottom: 5px;
     }
 
     section {
@@ -122,16 +144,11 @@
       transform: translateY(20px);
       transition: opacity 0.6s ease, transform 0.6s ease;
     }
+
     section.active {
       display: block;
       opacity: 1;
       transform: translateY(0);
-    }
-
-    img.icon {
-      width: 28px;
-      height: 28px;
-      margin-bottom: 5px;
     }
 
     audio {
@@ -151,9 +168,10 @@
       left: 0;
       height: 60px;
       padding: 5px;
+      z-index: 5;
     }
 
-    /* Effet zoom pour TOUTES les images (galerie incluse) */
+    /* Zoom global pour toutes les images */
     img:hover {
       transform: scale(1.03);
       transition: transform 0.4s ease;
@@ -165,7 +183,7 @@
     <img src="cabrini_logo-removebg-preview.png" alt="Logo" class="logo">
     <div class="header-center">
       <h1>Sonora</h1>
-      <div class="subtitle">Un projet innovant alliant technologie, et accessibilité.</div>
+      <div class="subtitle">Un projet innovant alliant technologie et accessibilité.</div>
     </div>
   </header>
 
@@ -179,9 +197,9 @@
         </div>
       </div>
       <h2>Accueil</h2>
-      <p>Bienvenue sur le site officiel de Sonora. Ce projet a été imaginé et conçu dans le but d'offrir une solution à la fois pratique, esthétique et innovante pour améliorer l'expérience sonore des utilisateurs de smartphones. Il s'agit d'un support en plastique recyclable intégrant un amplificateur de son entièrement passif, sans composants électroniques, qui permet d'amplifier naturellement le son des haut-parleurs d'un smartphone. En complément, nous avons intégré une dimension artistique à travers des musiques générées par intelligence artificielle, afin de faire rayonner les valeurs de notre établissement.
-<br><br>
-Ce projet a été réalisé en collaboration entre des élèves de STMG et de STI2D du lycée Cabrini. Cette alliance entre profils techniques et marketing a permis de couvrir tous les aspects du développement : de la conception assistée par ordinateur à la stratégie de communication. Notre objectif est simple : allier design, technologie et créativité pour offrir un objet utile, original et accessible à tous.</p>
+      <p>Bienvenue sur le site officiel de Sonora. Ce projet a été imaginé et conçu dans le but d'offrir une solution à la fois pratique, esthétique et innovante pour améliorer l'expérience sonore des utilisateurs de smartphones. Il s'agit d'un support en plastique recyclable intégrant un amplificateur de son entièrement passif, sans composants électroniques, qui permet d'amplifier naturellement le son des haut-parleurs d'un smartphone.
+      <br><br>
+      Ce projet a été réalisé en collaboration entre des élèves de STMG et de STI2D du lycée Cabrini. Cette alliance entre profils techniques et marketing a permis de couvrir tous les aspects du développement : de la conception assistée par ordinateur à la stratégie de communication. Notre objectif est simple : allier design, technologie et créativité pour offrir un objet utile, original et accessible à tous.</p>
     </section>
 
     <section id="test">
@@ -206,7 +224,7 @@ Ce projet a été réalisé en collaboration entre des élèves de STMG et de ST
 
     <section id="infos">
       <h2>Informations Techniques</h2>
-      <p>Ici seront détaillées les caractéristiques techniques de l’amplificateur Sonaro : dimensions, matériaux, tests acoustiques, conception assistée par ordinateur, etc.</p>
+      <p>Ici seront détaillées les caractéristiques techniques de l’amplificateur Sonora : dimensions, matériaux, tests acoustiques, conception assistée par ordinateur, etc.</p>
     </section>
 
     <section id="acheter">
