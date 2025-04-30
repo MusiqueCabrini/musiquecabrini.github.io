@@ -292,6 +292,42 @@
 .product-card button:hover {
   background-color: #e0c200;
 }
+.customizer {
+  background-color: #2e2e2e;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  width: 300px;
+  margin: auto;
+  border: 2px solid #FFD700;
+}
+
+.customizer img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin: 15px 0;
+}
+
+.color-options {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.color-btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.color-btn:hover {
+  transform: scale(1.2);
+}
   </style>
 </head>
 <body>
@@ -378,14 +414,18 @@
       <p class="monthly">ou 1,25 €/mois pendant 24 mois</p>
       <button>Bientôt disponible</button>
     </div>
-    <div class="product-card">
-      <h3>Sonora Personnalisé</h3>
-      <img src="projet2.jpg" alt="Modèle Personnalisé">
-      <p class="price">39,96 €</p>
-      <p class="monthly">ou 1,66 €/mois pendant 24 mois</p>
-      <button>Acheter</button>
-    </div>
+    <div class="customizer">
+  <h3>Sonora Personnalisé</h3>
+  <img id="productImage" src="projet2-noir.png" alt="Sonora Personnalisé">
+  <div class="color-options">
+    <p>Choisir une couleur :</p>
+    <button class="color-btn" data-color="noir" style="background-color: black;"></button>
+    <button class="color-btn" data-color="bleu" style="background-color: blue;"></button>
+    <button class="color-btn" data-color="rouge" style="background-color: red;"></button>
   </div>
+  <p class="price">39,96 €</p>
+  <button>Acheter</button>
+</div>
 </section>
   </main>
 
@@ -413,5 +453,16 @@
       });
     }
   </script>
+  <script>
+  const colorButtons = document.querySelectorAll(".color-btn");
+  const productImage = document.getElementById("productImage");
+
+  colorButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      const color = button.getAttribute("data-color");
+      productImage.src = `projet2-${color}.png`; // Assurez-vous d’avoir les images projet2-noir.png, projet2-bleu.png, etc.
+    });
+  });
+</script>
 </body>
 </html>
