@@ -189,14 +189,31 @@
       margin-bottom: 25px;
     }
 
-    .team-names {
+    .team-container {
       display: flex;
       justify-content: center;
       gap: 20px;
-      margin-bottom: 10px;
-      font-weight: bold;
-      color: #FFD700;
       flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .team-member {
+      background-color: #2e2e2e;
+      border: 2px solid #FFD700;
+      border-radius: 12px;
+      padding: 15px;
+      width: 140px;
+      text-align: center;
+      color: #FFD700;
+      font-weight: bold;
+      font-size: 1em;
+    }
+
+    .team-role {
+      margin-top: 8px;
+      font-size: 0.9em;
+      color: #ccc;
+      font-weight: normal;
     }
 
     .project-description {
@@ -247,9 +264,24 @@
       <br><br>
       Ce projet a été réalisé en collaboration entre des élèves de STMG et de STI2D du lycée Cabrini. Cette alliance entre profils techniques et marketing a permis de couvrir tous les aspects du développement : de la conception assistée par ordinateur à la stratégie de communication. Notre objectif est simple : allier design, technologie et créativité pour offrir un objet utile, original et accessible à tous.</p>
 
-        <div class="team-names">
-          <span>Thibault</span><span>Eden</span><span>Mohamed</span><span>Quentin</span>
+        <div class="team-container">
+        <div class="team-member">
+          Thibault
+          <div class="team-role">Conception CAO</div>
         </div>
+        <div class="team-member">
+          Eden
+          <div class="team-role">Communication</div>
+        </div>
+        <div class="team-member">
+          Mohamed
+          <div class="team-role">Design produit</div>
+        </div>
+        <div class="team-member">
+          Quentin
+          <div class="team-role">Développement web</div>
+        </div>
+      </div>
 
       <div class="second-banner">
         Merci à nos professeurs et encadrants pour leur soutien tout au long du projet.
