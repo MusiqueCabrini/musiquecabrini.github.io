@@ -24,10 +24,6 @@
     header img.logo {
       height: 50px;
     }
-    header img.logo-right {
-      height: 40px;
-      margin-left: 20px;
-    }
     .header-center {
       text-align: center;
       flex-grow: 1;
@@ -51,20 +47,47 @@
       background-color: #1c1c1c;
     }
     .image-container {
+      position: relative;
       padding: 0;
       border: 3px solid #FFD700;
       border-radius: 12px;
       display: flex;
       justify-content: center;
       margin: 30px auto;
-      max-width: 400px;
+      max-width: 500px;
+      height: 320px;
       box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
+      overflow: hidden;
     }
     .image-container img {
-      width: 100%;
-      height: auto;
+      width: auto;
+      height: 100%;
       border-radius: 10px;
       display: block;
+    }
+    .btn-overlay {
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .image-container:hover .btn-overlay {
+      opacity: 1;
+    }
+    .btn-overlay button {
+      background-color: #FFD700;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-family: 'Orbitron', sans-serif;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .btn-overlay button:hover {
+      background-color: #e0c200;
     }
     nav {
       position: fixed;
@@ -108,6 +131,13 @@
       height: 400px;
       border: none;
     }
+    .footer-img {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      height: 60px;
+      padding: 5px;
+    }
   </style>
 </head>
 <body>
@@ -117,13 +147,16 @@
       <h1>Sonora</h1>
       <div class="subtitle">Un projet innovant alliant technologie, et accessibilité.</div>
     </div>
-    <img src="ceceee18-faf7-4afd-aff6-bd4e04a670d4.png" alt="Logo complémentaire" class="logo-right">
   </header>
 
   <main>
     <section id="accueil" class="active">
       <div class="image-container">
-        <img src="projet_final.jpg" alt="Projet final">
+        <img src="final-projet.jpg" alt="Projet final">
+        <div class="btn-overlay">
+          <button onclick="openTab('infos')">En savoir plus</button>
+          <button onclick="openTab('acheter')">Acheter</button>
+        </div>
       </div>
       <h2>Accueil</h2>
       <p>Bienvenue sur le site officiel de Sonaro. Nous avons conçu un présentoir pour smartphone intégrant un amplificateur de son passif, et une dimension artistique avec des musiques IA.<br><br>
@@ -149,7 +182,24 @@
       <p>Visualisez ici le présentoir dans son ensemble :</p>
       <iframe src="modele-3d.html"></iframe>
     </section>
+
+    <section id="infos">
+      <h2>Informations Techniques</h2>
+      <p>Ici seront détaillées les caractéristiques techniques de l’amplificateur Sonaro : dimensions, matériaux, tests acoustiques, conception assistée par ordinateur, etc.</p>
+    </section>
+
+    <section id="acheter">
+      <h2>Acheter</h2>
+      <p>Prix : à partir de 19,90€</p>
+      <p>Version personnalisée avec gravure ou couleur : 29,90€</p>
+      <p>Galerie de visuels :</p>
+      <img src="projet1.jpg" alt="Modèle 1" style="width: 45%; margin: 5px;">
+      <img src="projet2.jpg" alt="Modèle 2" style="width: 45%; margin: 5px;">
+      <p>Personnalisez votre amplificateur via notre formulaire bientôt disponible.</p>
+    </section>
   </main>
+
+  <img src="ceceee18-faf7-4afd-aff6-bd4e04a670d4.png" alt="Décoration" class="footer-img">
 
   <nav>
     <a href="#" onclick="openTab('accueil')">
@@ -167,6 +217,14 @@
     <a href="#" onclick="openTab('modele3d')">
       <img src="3d-logo.png" alt="3D" class="icon">
       3D
+    </a>
+    <a href="#" onclick="openTab('infos')">
+      <img src="info-icon.png" alt="Infos" class="icon">
+      Infos
+    </a>
+    <a href="#" onclick="openTab('acheter')">
+      <img src="shop-icon.png" alt="Acheter" class="icon">
+      Acheter
     </a>
   </nav>
 
