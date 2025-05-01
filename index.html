@@ -318,6 +318,15 @@
 .product-card button:hover {
   background-color: #e0c200;
 }
+.music-item .audio-wrapper {
+      flex-grow: 1;
+    }
+
+    .music-item .description {
+      font-size: 0.9em;
+      color: #ccc;
+      margin-top: 8px;
+    }
   </style>
 </head>
 <body>
@@ -378,13 +387,20 @@
 
     <section id="musique">
       <h2>Musique IA</h2>
+      <p>Voici des morceaux générés par intelligence artificielle, mettant en valeur les valeurs de l'établissement :</p>
       <div class="music-item">
         <img src="cover1.jpg" alt="Musique 1">
-        <audio controls src="musique-cabrini-1.mp3"></audio>
+        <div class="audio-wrapper">
+          <audio controls src="musique-cabrini-1.mp3"></audio>
+          <div class="description">Ce morceau évoque l’ambiance et les valeurs du lycée Cabrini.</div>
+        </div>
       </div>
       <div class="music-item">
         <img src="cover2.jpg" alt="Musique 2">
-        <audio controls src="musique-cabrini-2.mp3"></audio>
+        <div class="audio-wrapper">
+          <audio controls src="musique-cabrini-2.mp3"></audio>
+          <div class="description">Un thème plus moderne représentant l’ouverture et l’innovation.</div>
+        </div>
       </div>
     </section>
 
