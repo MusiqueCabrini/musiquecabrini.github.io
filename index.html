@@ -352,20 +352,30 @@
 
     <section id="musique">
       <h2>Musique IA</h2>
-      <p>Voici des morceaux générés par intelligence artificielle, mettant en valeur les valeurs de l'établissement :</p>
-      <audio controls src="musique-cabrini-1.mp3"></audio>
-      <audio controls src="musique-cabrini-2.mp3"></audio>
+      <div class="music-item">
+        <img src="cover1.jpg" alt="Musique 1">
+        <audio controls src="musique-cabrini-1.mp3"></audio>
+      </div>
+      <div class="music-item">
+        <img src="cover2.jpg" alt="Musique 2">
+        <audio controls src="musique-cabrini-2.mp3"></audio>
+      </div>
     </section>
 
     <section id="modele3d">
       <h2>Modèle 3D</h2>
-      <p>Visualisez ici le présentoir dans son ensemble :</p>
-      <iframe src="modele-3d.html"></iframe>
+      <model-viewer src="maquette.glb" alt="Modèle 3D" auto-rotate camera-controls ar></model-viewer>
     </section>
 
     <section id="infos">
       <h2>Informations Techniques</h2>
-      <p>Ici seront détaillées les caractéristiques techniques de l’amplificateur Sonaro : dimensions, matériaux, tests acoustiques, conception assistée par ordinateur, etc.</p>
+      <ul>
+        <li>Dimensions : 150 x 60 x 60 mm</li>
+        <li>Matériau : PLA (plastique recyclable)</li>
+        <li>Amplification passive : +20% à +40% selon fréquence</li>
+        <li>Compatible avec tous les smartphones jusqu’à 8 cm de large</li>
+        <li>Conception : modélisation 3D sous Fusion 360, découpé au laser/3D</li>
+      </ul>
     </section>
 
     <section id="acheter">
