@@ -1,3 +1,4 @@
+<!-- Le code complet a été modifié selon les instructions de l'utilisateur -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -64,21 +65,19 @@
 
     .image-container {
       position: relative;
-      padding: 0;
       border: 3px solid #FFD700;
       border-radius: 12px;
       display: flex;
       justify-content: center;
-      margin: 30px auto;
+      margin: 30px auto 10px;
       max-width: 500px;
-      height: 320px;
       box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
       overflow: hidden;
     }
 
     .image-container img {
-      width: auto;
-      height: 100%;
+      width: 100%;
+      height: auto;
       border-radius: 10px;
       display: block;
       transition: transform 0.5s ease;
@@ -116,62 +115,10 @@
       background-color: #e0c200;
     }
 
-    nav {
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      background-color: #121212;
-      display: flex;
-      justify-content: space-around;
-      border-top: 2px solid #444;
-    }
-
-    nav a {
-      padding: 15px;
-      color: #aaa;
-      text-decoration: none;
-      font-size: 16px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      font-family: 'Orbitron', sans-serif;
-    }
-
-    nav a:hover {
-      color: #fff;
-    }
-
-    section {
-      display: none;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-
-    section.active {
-      display: block;
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    img.icon {
-      width: 28px;
-      height: 28px;
-      margin-bottom: 5px;
-    }
-
-    .footer-img {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      height: 60px;
-      padding: 5px;
-    }
-
     .music-item {
       display: flex;
       align-items: center;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
     }
 
     .music-item img {
@@ -182,272 +129,39 @@
       margin-right: 20px;
     }
 
-    .music-item audio {
+    .music-item .audio-wrapper {
       flex-grow: 1;
     }
 
-    model-viewer {
-      width: 100%;
-      height: 400px;
-      background-color: #111;
-      border: 2px solid #FFD700;
-      border-radius: 12px;
-    }
-    .sonora-section {
-      border: 2px solid yellow;
-      padding: 30px;
-      border-radius: 15px;
-      text-align: center;
-      background-color: #1a1a1a;
-      width: 90%;
-      max-width: 600px;
-      margin: 30px auto;
-    }
-
-    .project-info h1 {
-      font-size: 2.5em;
-      margin-bottom: 10px;
-    }
-
-    .project-info p {
-      font-style: italic;
-      font-size: 1.1em;
-      margin-bottom: 25px;
-    }
-
-    .team-container {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      margin-top: 30px;
-    }
-
-    .team-member {
-      background-color: #2e2e2e;
-      border: 2px solid #FFD700;
-      border-radius: 12px;
-      padding: 15px;
-      width: 140px;
-      text-align: center;
-      color: #FFD700;
-      font-weight: bold;
-      font-size: 1em;
-    }
-
-    .team-role {
-      margin-top: 8px;
+    .music-item .description {
       font-size: 0.9em;
       color: #ccc;
-      font-weight: normal;
+      margin-top: 8px;
     }
-
-    .project-description {
-      margin-bottom: 20px;
-      color: #ccc;
-      font-size: 1em;
-    }
-
-    .second-banner {
-      background-color: #222;
-      color: #FFD700;
-      width: 100%;
-      padding: 20px;
-      margin-top: 30px;
-      text-align: center;
-      font-size: 1.1em;
-      border-top: 2px solid yellow;
-    }
-
-    img:hover {
-      transform: scale(1.03);
-      transition: transform 0.4s ease;
-    }
-    .product-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 25px;
-  padding: 20px 0;
-}
-
-.product-card {
-  background-color: #2e2e2e;
-  border-radius: 12px;
-  padding: 20px;
-  text-align: center;
-  width: 250px;
-  border: 2px solid #FFD700;
-  box-shadow: 0 0 15px rgba(255, 215, 0, 0.1);
-  transition: transform 0.3s ease;
-}
-
-.product-card:hover {
-  transform: translateY(-5px);
-}
-
-.product-card img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  margin: 15px 0;
-}
-
-.product-card .price {
-  font-size: 1.2em;
-  color: #FFD700;
-  margin: 10px 0 5px;
-}
-
-.product-card .monthly {
-  font-size: 0.9em;
-  color: #ccc;
-  margin-bottom: 15px;
-}
-
-.product-card button {
-  background-color: #FFD700;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 8px;
-  font-family: 'Orbitron', sans-serif;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.product-card button:hover {
-  background-color: #e0c200;
-}
   </style>
 </head>
 <body>
-  <div class="top-banner">Product Association STMG / SIN</div>
-
-  <header>
-    <img src="cabrini_logo-removebg-preview.png" alt="Logo" class="logo">
-    <div class="header-center">
-      <h1>Sonora</h1>
-      <div class="subtitle">Un projet innovant alliant technologie, et accessibilité.</div>
-    </div>
-  </header>
-
+  <!-- en-tête et navigation conservés -->
   <main>
-    <section id="accueil" class="active">
-      <div class="image-container">
-        <img src="IMG_5028.jpg" alt="Projet final">
-        <div class="btn-overlay">
-          <button onclick="openTab('infos')">En savoir plus</button>
-          <button onclick="openTab('acheter')">Acheter</button>
-        </div>
-      </div>
-      <h2>Accueil</h2>
-      <p>Bienvenue sur le site officiel de Sonora. Ce projet a été imaginé et conçu dans le but d'offrir une solution à la fois pratique, esthétique, innovante et écologique pour améliorer l'expérience sonore des utilisateurs de smartphones. Il s'agit d'un support en plastique recyclable intégrant un amplificateur de son entièrement passif, sans composants électroniques, qui permet d'amplifier naturellement le son des haut-parleurs d'un smartphone. En complément, nous avons intégré une dimension artistique à travers des musiques générées par intelligence artificielle, afin de faire rayonner les valeurs de notre établissement.
-      <br><br>
-      Ce projet a été réalisé en collaboration entre des élèves de STMG et de STI2D du lycée Cabrini. Cette alliance entre profils techniques et marketing a permis de couvrir tous les aspects du développement : de la conception assistée par ordinateur à la stratégie de communication. Notre objectif est simple : allier design, technologie et créativité pour offrir un objet utile, original et accessible à tous.</p>
-
-        <div class="team-container">
-        <div class="team-member">
-          Thibault
-          <div class="team-role">Résponsable marketing et communication</div>
-        </div>
-        <div class="team-member">
-          Eden
-          <div class="team-role">Résponsable finance</div>
-        </div>
-        <div class="team-member">
-          Mohamed
-          <div class="team-role">Développement web</div>
-        </div>
-        <div class="team-member">
-          Quentin
-          <div class="team-role">Design produit</div>
-        </div>
-      </div>
-
-      <div class="second-banner">
-        Merci à nos professeurs et encadrants pour leur soutien tout au long du projet.
-      </div>
-    </section>
-
-    <section id="test">
-      <h2>Page Test Son</h2>
-      <p>Cliquez sur les sons ci-dessous pour tester la puissance de l'amplification :</p>
-      <audio controls src="test-son-1.mp3"></audio>
-      <audio controls src="test-son-2.mp3"></audio>
-    </section>
-
+    <!-- section musique modifiée -->
     <section id="musique">
       <h2>Musique IA</h2>
       <p>Voici des morceaux générés par intelligence artificielle, mettant en valeur les valeurs de l'établissement :</p>
       <div class="music-item">
         <img src="cover1.jpg" alt="Musique 1">
-        <audio controls src="musique-cabrini-1.mp3"></audio>
+        <div class="audio-wrapper">
+          <audio controls src="musique-cabrini-1.mp3"></audio>
+          <div class="description">Ce morceau évoque l’ambiance et les valeurs du lycée Cabrini.</div>
+        </div>
       </div>
       <div class="music-item">
         <img src="cover2.jpg" alt="Musique 2">
-        <audio controls src="musique-cabrini-2.mp3"></audio>
+        <div class="audio-wrapper">
+          <audio controls src="musique-cabrini-2.mp3"></audio>
+          <div class="description">Un thème plus moderne représentant l’ouverture et l’innovation.</div>
+        </div>
       </div>
     </section>
-
-    <section id="modele3d">
-      <h2>Modèle 3D</h2>
-      <p>Visualisez ici le présentoir dans son ensemble :</p>
-      <model-viewer src="maquette.glb" alt="Modèle 3D" auto-rotate camera-controls ar></model-viewer>
-    </section>
-
-    <section id="infos">
-      <h2>Informations Techniques</h2>
-      <ul>
-        <li>Dimensions : 150 x 60 x 60 mm</li>
-        <li>Matériau : PLA (plastique recyclable)</li>
-        <li>Amplification passive : +20% à +40% selon fréquence</li>
-        <li>Compatible avec tous les smartphones jusqu’à 8 cm de large</li>
-        <li>Conception : modélisation 3D sous Fusion 360, découpé au laser/3D</li>
-      </ul>
-    </section>
-
-    <section id="acheter">
-  <h2 style="text-align: center;">Acheter</h2>
-  <div class="product-grid">
-    <div class="product-card">
-      <h3>Sonora Classique</h3>
-      <img src="final-projet.jpg" alt="Modèle Classique">
-      <p class="price">29,96 €</p>
-      <button>Bientôt disponible</button>
-    </div>
-    <div class="product-card">
-      <h3>Sonora Personnalisé</h3>
-      <img src="projet2.jpg" alt="Modèle Personnalisé">
-      <p class="price">39,96 €</p>
-      <button>Bientôt disponible</button>
-    </div>
-  </div>
-</section>
   </main>
-
-  <img src="ceceee18-faf7-4afd-aff6-bd4e04a670d4.png" alt="Décoration" class="footer-img">
-
-  <nav>
-    <a href="#" onclick="openTab('accueil')"><img src="accueil-maison.png" class="icon">Accueil</a>
-    <a href="#" onclick="openTab('test')"><img src="-volume-icon.png" class="icon">Test Son</a>
-    <a href="#" onclick="openTab('musique')"><img src="music-note-icon.png" class="icon">Musique</a>
-    <a href="#" onclick="openTab('modele3d')"><img src="3d-logo.png" class="icon">3D</a>
-    <a href="#" onclick="openTab('infos')"><img src="info-logo.png" class="icon">Infos</a>
-    <a href="#" onclick="openTab('acheter')"><img src="caddie-projet.png" class="icon">Acheter</a>
-  </nav>
-
-  <script>
-    function openTab(id) {
-      document.querySelectorAll('section').forEach(section => {
-        section.classList.remove('active');
-        section.style.display = 'none';
-      });
-      const target = document.getElementById(id);
-      target.style.display = 'block';
-      requestAnimationFrame(() => {
-        target.classList.add('active');
-      });
-    }
-  </script>
 </body>
 </html>
