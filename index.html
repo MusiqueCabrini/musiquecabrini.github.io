@@ -5,39 +5,298 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sonora (France)</title>
   <link rel="icon" href="logo-projet-removebg-preview.png" type="image/x-icon">
-  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Raleway&display=swap');
-    body { margin: 0; font-family: 'Raleway', sans-serif; background-color: #1a1a1a; color: #f0f0f0; }
-    header { padding: 10px 30px; background-color: #2e2e2e; display: flex; align-items: center; justify-content: space-between; }
-    header img.logo { height: 50px; }
-    .header-center { text-align: center; flex-grow: 1; margin-right: 50px; }
-    .header-center h1 { font-family: 'Orbitron', sans-serif; font-size: 32px; margin: 5px 0; }
-    .subtitle { font-size: 16px; color: #cccccc; }
-    .top-banner { background-color: #FFD700; color: black; padding: 10px; text-align: center; font-weight: bold; }
-    main { padding: 10px 20px 80px; min-height: 80vh; box-shadow: 0 0 25px rgba(200,200,200,0.1); border-radius: 10px; margin: 20px; background-color: #1c1c1c; }
-    .image-container { position: relative; padding: 0; border: 3px solid #FFD700; border-radius: 12px; display: flex; justify-content: center; margin: 30px auto; max-width: 500px; height: 320px; box-shadow: 0 0 10px rgba(255,215,0,0.2); overflow: hidden; }
-    .image-container img { width: auto; height: 100%; border-radius: 10px; display: block; transition: transform 0.5s ease; }
-    .image-container:hover img { transform: scale(1.05); }
-    .btn-overlay { position: absolute; bottom: 10px; width: 100%; display: flex; justify-content: space-around; opacity: 0; transition: opacity 0.3s ease; }
-    .image-container:hover .btn-overlay { opacity: 1; }
-    .btn-overlay button { background-color: #FFD700; border: none; padding: 8px 16px; border-radius: 8px; font-family: 'Orbitron', sans-serif; cursor: pointer; transition: background-color 0.3s; }
-    .btn-overlay button:hover { background-color: #e0c200; }
-    nav { position: fixed; bottom: 0; width: 100%; background-color: #121212; display: flex; justify-content: space-around; border-top: 2px solid #444; }
-    nav a { padding: 15px; color: #aaa; text-decoration: none; font-size: 16px; display: flex; flex-direction: column; align-items: center; font-family: 'Orbitron', sans-serif; }
-    nav a:hover { color: #fff; }
-    section { display: none; opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
-    section.active { display: block; opacity: 1; transform: translateY(0); }
-    img.icon { width: 28px; height: 28px; margin-bottom: 5px; }
-    .footer-img { position: fixed; bottom: 0; left: 0; height: 60px; padding: 5px; }
-    .music-item { display: flex; align-items: center; margin-bottom: 20px; }
-    .music-item img { width: 100px; height: 100px; border-radius: 10px; border: 2px solid #FFD700; margin-right: 20px; }
-    .music-item audio { flex-grow: 1; }
-    model-viewer { width: 100%; height: 400px; background-color: #111; border: 2px solid #FFD700; border-radius: 12px; }
+
+    body {
+      margin: 0;
+      font-family: 'Raleway', sans-serif;
+      background-color: #1a1a1a;
+      color: #f0f0f0;
+    }
+
+    header {
+      padding: 10px 30px;
+      background-color: #2e2e2e;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    header img.logo {
+      height: 50px;
+    }
+
+    .header-center {
+      text-align: center;
+      flex-grow: 1;
+      margin-right: 50px;
+    }
+
+    .header-center h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 32px;
+      margin: 5px 0;
+    }
+
+    .subtitle {
+      font-size: 16px;
+      color: #cccccc;
+    }
+
+    .top-banner {
+      background-color: #FFD700;
+      color: black;
+      padding: 10px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    main {
+      padding: 10px 20px 80px;
+      min-height: 80vh;
+      box-shadow: 0 0 25px rgba(200, 200, 200, 0.1);
+      border-radius: 10px;
+      margin: 20px;
+      background-color: #1c1c1c;
+    }
+
+    .image-container {
+      position: relative;
+      padding: 0;
+      border: 3px solid #FFD700;
+      border-radius: 12px;
+      display: flex;
+      justify-content: center;
+      margin: 30px auto;
+      max-width: 500px;
+      height: 320px;
+      box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
+      overflow: hidden;
+    }
+
+    .image-container img {
+      width: auto;
+      height: 100%;
+      border-radius: 10px;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .image-container:hover img {
+      transform: scale(1.05);
+    }
+
+    .btn-overlay {
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .image-container:hover .btn-overlay {
+      opacity: 1;
+    }
+
+    .btn-overlay button {
+      background-color: #FFD700;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-family: 'Orbitron', sans-serif;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .btn-overlay button:hover {
+      background-color: #e0c200;
+    }
+
+    nav {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: #121212;
+      display: flex;
+      justify-content: space-around;
+      border-top: 2px solid #444;
+    }
+
+    nav a {
+      padding: 15px;
+      color: #aaa;
+      text-decoration: none;
+      font-size: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    nav a:hover {
+      color: #fff;
+    }
+
+    section {
+      display: none;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    section.active {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    img.icon {
+      width: 28px;
+      height: 28px;
+      margin-bottom: 5px;
+    }
+
+    .footer-img {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      height: 60px;
+      padding: 5px;
+    }
+
+    .sonora-section {
+      border: 2px solid yellow;
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+      background-color: #1a1a1a;
+      width: 90%;
+      max-width: 600px;
+      margin: 30px auto;
+    }
+
+    .project-info h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    .project-info p {
+      font-style: italic;
+      font-size: 1.1em;
+      margin-bottom: 25px;
+    }
+
+    .team-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .team-member {
+      background-color: #2e2e2e;
+      border: 2px solid #FFD700;
+      border-radius: 12px;
+      padding: 15px;
+      width: 140px;
+      text-align: center;
+      color: #FFD700;
+      font-weight: bold;
+      font-size: 1em;
+    }
+
+    .team-role {
+      margin-top: 8px;
+      font-size: 0.9em;
+      color: #ccc;
+      font-weight: normal;
+    }
+
+    .project-description {
+      margin-bottom: 20px;
+      color: #ccc;
+      font-size: 1em;
+    }
+
+    .second-banner {
+      background-color: #222;
+      color: #FFD700;
+      width: 100%;
+      padding: 20px;
+      margin-top: 30px;
+      text-align: center;
+      font-size: 1.1em;
+      border-top: 2px solid yellow;
+    }
+
+    img:hover {
+      transform: scale(1.03);
+      transition: transform 0.4s ease;
+    }
+    .product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  padding: 20px 0;
+}
+
+.product-card {
+  background-color: #2e2e2e;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  width: 250px;
+  border: 2px solid #FFD700;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin: 15px 0;
+}
+
+.product-card .price {
+  font-size: 1.2em;
+  color: #FFD700;
+  margin: 10px 0 5px;
+}
+
+.product-card .monthly {
+  font-size: 0.9em;
+  color: #ccc;
+  margin-bottom: 15px;
+}
+
+.product-card button {
+  background-color: #FFD700;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-family: 'Orbitron', sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.product-card button:hover {
+  background-color: #e0c200;
+}
   </style>
 </head>
 <body>
   <div class="top-banner">Product Association STMG / SIN</div>
+
   <header>
     <img src="cabrini_logo-removebg-preview.png" alt="Logo" class="logo">
     <div class="header-center">
@@ -45,6 +304,7 @@
       <div class="subtitle">Un projet innovant alliant technologie, et accessibilité.</div>
     </div>
   </header>
+
   <main>
     <section id="accueil" class="active">
       <div class="image-container">
@@ -92,30 +352,20 @@
 
     <section id="musique">
       <h2>Musique IA</h2>
-      <div class="music-item">
-        <img src="cover1.jpg" alt="Musique 1">
-        <audio controls src="musique-cabrini-1.mp3"></audio>
-      </div>
-      <div class="music-item">
-        <img src="cover2.jpg" alt="Musique 2">
-        <audio controls src="musique-cabrini-2.mp3"></audio>
-      </div>
+      <p>Voici des morceaux générés par intelligence artificielle, mettant en valeur les valeurs de l'établissement :</p>
+      <audio controls src="musique-cabrini-1.mp3"></audio>
+      <audio controls src="musique-cabrini-2.mp3"></audio>
     </section>
 
     <section id="modele3d">
       <h2>Modèle 3D</h2>
-      <model-viewer src="maquette.glb" alt="Modèle 3D" auto-rotate camera-controls ar></model-viewer>
+      <p>Visualisez ici le présentoir dans son ensemble :</p>
+      <iframe src="modele-3d.html"></iframe>
     </section>
 
     <section id="infos">
       <h2>Informations Techniques</h2>
-      <ul>
-        <li>Dimensions : 150 x 60 x 60 mm</li>
-        <li>Matériau : PLA (plastique recyclable)</li>
-        <li>Amplification passive : +20% à +40% selon fréquence</li>
-        <li>Compatible avec tous les smartphones jusqu’à 8 cm de large</li>
-        <li>Conception : modélisation 3D sous Fusion 360, découpé au laser/3D</li>
-      </ul>
+      <p>Ici seront détaillées les caractéristiques techniques de l’amplificateur Sonaro : dimensions, matériaux, tests acoustiques, conception assistée par ordinateur, etc.</p>
     </section>
 
     <section id="acheter">
